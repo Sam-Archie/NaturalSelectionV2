@@ -13,7 +13,6 @@ namespace NaturalSelection.Domain.Entities
         public string Name { get; set; }
         public bool IsPrivate { get; set; }
         public List<Post> Posts { get; set; } = new List<Post>();
-        public List<ApplicationUser> ApplicationUsers { get; set; } = new List<ApplicationUser>();
         public List<Tag> Tags { get; set; } = new List<Tag>();
     }
 }

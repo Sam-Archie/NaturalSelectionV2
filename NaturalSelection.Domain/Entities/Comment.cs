@@ -12,7 +12,6 @@ namespace NaturalSelection.Domain.Entities
         public Guid Id { get; set; }
         public string Content { get; set; }
         public Post Post { get; set; }
-        public ApplicationUser ApplicationUser { get; set; }
         public int Likes { get; set; }
         public List<CommentReply> Replies { get; set; } = new List<CommentReply>();
     }
