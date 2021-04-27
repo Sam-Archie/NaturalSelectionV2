@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NaturalSelection.Application\NaturalSelection.Application.csproj" />
     <ProjectReference Include="..\NaturalSelection.Domain\NaturalSelection.Domain.csproj" />
+    <ProjectReference Include="..\NaturalSelection.Identity\NaturalSelection.Identity.csproj" />
   </ItemGroup>
 
 </Project>

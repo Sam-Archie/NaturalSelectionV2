@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NaturalSelection.Domain.Entities;
+using NaturalSelection.Identity.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace NaturalSelection.Persistance
         {
 
         }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<CommentReply> CommentReplies { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Forum> Forums { get; set; }

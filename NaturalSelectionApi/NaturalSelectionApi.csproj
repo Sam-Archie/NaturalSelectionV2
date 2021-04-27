@@ -14,8 +14,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NaturalSelection.Application\NaturalSelection.Application.csproj" />
+    <ProjectReference Include="..\NaturalSelection.Domain\NaturalSelection.Domain.csproj" />
     <ProjectReference Include="..\NaturalSelection.Identity\NaturalSelection.Identity.csproj" />
     <ProjectReference Include="..\NaturalSelection.Persistance\NaturalSelection.Persistance.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

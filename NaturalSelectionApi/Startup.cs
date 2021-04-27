@@ -34,9 +34,10 @@ namespace NaturalSelectionApi
         {
 
             services.AddControllers();
+            services.AddDbContext<NaturalSelectionDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("NaturalSelectionConnection")));
             services.AddIdentityServices(Configuration);
-            services.AddDbContext<NaturalSelectionDbContext>(opt =>
-                opt.UseSqlServer(Configuration.GetConnectionString("NaturalSelectionConnection")));
+
             services.AddCors(options =>
             {
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
