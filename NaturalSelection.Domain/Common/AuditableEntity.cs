@@ -9,7 +9,6 @@ namespace NaturalSelection.Domain.Common
 {
     public class AuditableEntity
     {
-        public User CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
     }
