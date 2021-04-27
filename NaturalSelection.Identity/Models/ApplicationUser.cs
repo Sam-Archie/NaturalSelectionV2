@@ -18,9 +18,5 @@ namespace NaturalSelection.Identity.Models
                 return $"{FirstName}, {LastName}";
             }
         }
-        public List<Post> Posts { get; set; } = new List<Post>();
-        public List<Forum> Forums { get; set; } = new List<Forum>();
-        public List<CommentReply> Replies { get; set; } = new List<CommentReply>();
-        public List<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

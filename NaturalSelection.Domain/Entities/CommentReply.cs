@@ -10,6 +10,7 @@ namespace NaturalSelection.Domain.Entities
     public class CommentReply : AuditableEntity
     {
         public Guid Id { get; set; }
+        public Guid AppicationUsersId { get; set; }
         public string Content { get; set; }
         public int Likes { get; set; }
         public Comment Comment { get; set; }
