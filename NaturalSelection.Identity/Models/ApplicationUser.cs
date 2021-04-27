@@ -12,6 +12,12 @@ namespace NaturalSelection.Identity.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string FullName { 
+            get
+            {
+                return $"{FirstName}, {LastName}";
+            }
+        }
         public List<Post> Posts { get; set; } = new List<Post>();
         public List<Forum> Forums { get; set; } = new List<Forum>();
         public List<CommentReply> Replies { get; set; } = new List<CommentReply>();
