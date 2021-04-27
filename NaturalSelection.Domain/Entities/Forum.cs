@@ -11,6 +11,8 @@ namespace NaturalSelection.Domain.Entities
     {
         public Guid ForumId { get; set; }
         public string Name { get; set; }
+        public Guid ApplicationUserId { get; set; }
+        public string UserName { get; set; }
         public bool IsPrivate { get; set; }
         public List<Post> Posts { get; set; } = new List<Post>();
         public List<Tag> Tags { get; set; } = new List<Tag>();

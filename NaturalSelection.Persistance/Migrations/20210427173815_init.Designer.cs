@@ -10,8 +10,8 @@ using NaturalSelection.Persistance;
 namespace NaturalSelection.Persistance.Migrations
 {
     [DbContext(typeof(NaturalSelectionDbContext))]
-    [Migration("20210427135904_testing")]
-    partial class testing
+    [Migration("20210427173815_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,8 +42,8 @@ namespace NaturalSelection.Persistance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("AppicationUsersId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("AppicationUserUserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
@@ -73,8 +73,8 @@ namespace NaturalSelection.Persistance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("AppicationUsersId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("AppicationUserUserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("CommentId")
                         .HasColumnType("uniqueidentifier");
@@ -104,6 +104,12 @@ namespace NaturalSelection.Persistance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("AppicationUserUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -127,7 +133,7 @@ namespace NaturalSelection.Persistance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("AppicationUsersId")
+                    b.Property<Guid>("ApplicationUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Content")
@@ -172,64 +178,6 @@ namespace NaturalSelection.Persistance.Migrations
                     b.ToTable("Tags");
                 });
 
-            modelBuilder.Entity("NaturalSelection.Identity.Models.ApplicationUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ApplicationUsers");
-                });
-
             modelBuilder.Entity("PostTag", b =>
                 {
                     b.Property<Guid>("PostsId")
@@ -271,11 +219,9 @@ namespace NaturalSelection.Persistance.Migrations
 
             modelBuilder.Entity("NaturalSelection.Domain.Entities.CommentReply", b =>
                 {
-                    b.HasOne("NaturalSelection.Domain.Entities.Comment", "Comment")
+                    b.HasOne("NaturalSelection.Domain.Entities.Comment", null)
                         .WithMany("Replies")
                         .HasForeignKey("CommentId");
-
-                    b.Navigation("Comment");
                 });
 
             modelBuilder.Entity("NaturalSelection.Domain.Entities.Post", b =>

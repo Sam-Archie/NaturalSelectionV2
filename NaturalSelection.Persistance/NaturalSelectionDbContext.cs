@@ -15,9 +15,9 @@ namespace NaturalSelection.Persistance
         {
 
         }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<CommentReply> CommentReplies { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<ForumUsers> ForumUsers { get; set; }
         public DbSet<Forum> Forums { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Post> Posts { get; set; }

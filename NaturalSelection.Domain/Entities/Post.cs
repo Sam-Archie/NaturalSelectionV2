@@ -1,6 +1,7 @@
 ﻿using NaturalSelection.Domain.Common;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,9 @@ namespace NaturalSelection.Domain.Entities
     public class Post : AuditableEntity
     {
         public Guid Id { get; set; }
-        public Guid AppicationUsersId { get; set; }
+        public Guid ApplicationUserId { get; set; }
         public string Content { get; set; }
-        public int Likes { get; set; }
+        public int Likes { get; set; } 
         public List<Comment> Comments { get; set; } = new List<Comment>();
         public List<Tag> Tags { get; set; } = new List<Tag>();
     }

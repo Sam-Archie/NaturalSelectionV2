@@ -10,8 +10,8 @@ using NaturalSelection.Identity;
 namespace NaturalSelection.Identity.Migrations
 {
     [DbContext(typeof(NaturalSelectionIdentityDbContext))]
-    [Migration("20210427135652_init_users")]
-    partial class init_users
+    [Migration("20210427173603_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
