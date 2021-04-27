@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using NaturalSelection.Domain.Entities;
 using NaturalSelection.Identity.Models;
 using System;
@@ -11,7 +12,7 @@ namespace NaturalSelection.Identity
 {
     public class NaturalSelectionIdentityDbContext : IdentityDbContext<ApplicationUser>
     {
-        public NaturalSelectionIdentityDbContext()
+        public NaturalSelectionIdentityDbContext(DbContextOptions<NaturalSelectionIdentityDbContext> options) : base(options)
         {
 
         }
